@@ -1,6 +1,15 @@
-const server = require("./api/server");
-const PORT = process.env.PORT || 5000;
+const express = require("express");
+const server = express();
 
-server.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+//Route Imports
+
+server.use(express.json());
+
+//Routes
+
+//Deployment
+server.get("/", (req, res) => {
+  res.status(200).json("Successful Deployment");
 });
+
+module.exports = server;

@@ -4,7 +4,9 @@
   "description": "Node Server Testing Challenge",
   "main": "server.js",
   "scripts": {
-    "test": "jest --watch"
+    "server": "nodemon index.js",
+    "test": "cross-env DB_ENV=testing jest --watch",
+    "start": "node index.js"
   },
   "jest": {
     "testEnvironment": "node"
@@ -24,7 +26,13 @@
     "jest": "^24.9.0",
     "supertest": "^4.0.2"
   },
+  "test": {
+    "testEnviroment": "node"
+  },
   "dependencies": {
-    "express": "^4.17.1"
+    "all": "0.0.0",
+    "express": "^4.17.1",
+    "knex": "^0.19.5",
+    "sqlite3": "^4.1.0"
   }
 }
